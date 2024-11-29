@@ -26,23 +26,23 @@ class UserResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
-                ->required(),
+                    ->required(),
 
-                Forms\Components\TextInput::make('email')    
-                ->label('Email Address')
-                ->email()
-                ->maxLength(255)
-                ->unique(ignoreRecord: true)
-                ->required(),
+                Forms\Components\TextInput::make('email')
+                    ->label('Email Address')
+                    ->email()
+                    ->maxLength(255)
+                    ->unique(ignoreRecord: true)
+                    ->required(),
 
                 Forms\Components\DateTimePicker::make('email_verified_at')
-                ->label('Email Verified At')
-                ->default(now()),
+                    ->label('Email Verified At')
+                    ->default(now()),
 
                 Forms\Components\TextInput::make('password')
-                ->password()
-                ->dehydrated(fn($state) => filled($state))
-                ->required(fn(Page $livewire): bool => $livewire instanceof CreateRecord)
+                    ->password()
+                    ->dehydrated(fn($state) => filled($state))
+                    ->required(fn(Page $livewire): bool => $livewire instanceof CreateRecord)
             ]);
     }
 
@@ -51,18 +51,18 @@ class UserResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
-                ->searchable(),
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('email')
-                ->searchable(),
+                    ->searchable(),
 
                 Tables\Columns\TextColumn::make('email_verified_at')
-                ->dateTime()
-                ->sortable(),
+                    ->dateTime()
+                    ->sortable(),
 
                 Tables\Columns\TextColumn::make('created_at')
-                ->dateTime()
-                ->sortable(),
+                    ->dateTime()
+                    ->sortable(),
             ])
             ->filters([
                 //

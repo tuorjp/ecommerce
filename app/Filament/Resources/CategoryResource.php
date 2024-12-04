@@ -27,6 +27,8 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
 
+    protected static ?int $navigationSort = 3;
+
     public static function mutateFormDataBeforeCreate(array $data): array
     {
         $data['slug'] = $data['slug'] ?? Str::slug($data['name']);

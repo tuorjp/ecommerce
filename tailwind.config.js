@@ -8,12 +8,9 @@ export default {
         './resources/**/*.vue',
         'node_modules/preline/dist/*.js',
     ],
+    darkMode: 'class',
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
-        },
+        extend: {},
     },
     plugins: [
         require('preline/plugin'),

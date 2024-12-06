@@ -56,8 +56,10 @@
             </div>
             <div class="flex flex-wrap items-center gap-4">
               <button wire:click="addToCart({{$product->id}})" class="w-full p-4 bg-blue-500 rounded-md lg:w-2/5 dark:text-gray-200 text-gray-50 hover:bg-blue-600 dark:bg-blue-500 dark:hover:bg-blue-700">
-                <span wire:loading.remove>Add to cart</span>
-                <span wire:loading>Adding...</span>
+                <!-- wire:target indicates the loading show/hide proccess should be triggered only by the 
+                 function passed in the argument -->
+                <span wire:loading.remove wire:target="addToCart({{$product->id}})">Add to cart</span>
+                <span wire:loading wire:target="addToCart({{$product->id}})">Adding...</span>
               </button>
             </div>
           </div>

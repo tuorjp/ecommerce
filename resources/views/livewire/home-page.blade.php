@@ -227,7 +227,7 @@
                         <!-- MONTANDO A ROTA QUE VAI PARA PRODUTOS, FILTRANDO POR MARCA -->
                         <a href="/products?selected_brands[0]={{$brand->id}}" class="">
                             <img src="{{url('storage', $brand->image)}}" alt="{{$brand->name}}"
-                                class="object-cover w-full h-64 rounded-t-lg">
+                                class="object-contain w-full h-64 rounded-t-lg">
                         </a>
                         <div class="p-5 text-center">
                             <a href="" class="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">

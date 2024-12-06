@@ -20,7 +20,10 @@ class ResetPasswordPage extends Component
     public $password;
     public $password_confirmation;
 
-    //passa o token que vem da URL para a variável token
+    /*
+    * passa o token que vem da URL para a variável token
+    * o token vem da rota que definimos lá atrás Route::get('/reset/{token}', ResetPasswordPage::class)->name('password.reset');
+    */
     public function mount($token){
         $this->token = $token;
     }

@@ -43,7 +43,7 @@
                   $payment_status = '<span class="bg-blue-500 py-1 px-3 rounded text-white shadow">Pending</span>';
                 }
                 if($order->payment_status == 'paid'){
-                  $payment_status = '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Paif</span>';
+                  $payment_status = '<span class="bg-green-600 py-1 px-3 rounded text-white shadow">Paid</span>';
                 }
                 if($order->payment_status == 'failed'){
                   $payment_status = '<span class="bg-red-500 py-1 px-3 rounded text-white shadow">Failed</span>';

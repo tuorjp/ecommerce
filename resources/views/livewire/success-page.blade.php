@@ -43,7 +43,7 @@
             <p class="mb-2 text-sm font-medium leading-5 text-gray-800 dark:text-gray-400 ">
               Total: </p>
             <p class="text-base font-semibold leading-4 text-blue-600 dark:text-gray-400">
-              {{Number:currency($order->grand_total, 'BRL')}}
+              {{Number::currency($order->grand_total, 'BRL')}}
             </p>
           </div>
           <div class="w-full px-4 mb-4 md:w-1/4">
@@ -62,27 +62,27 @@
                 <div class="flex justify-between w-full">
                   <p class="text-base leading-4 text-gray-800 dark:text-gray-400">Subtotal</p>
                   <p class="text-base leading-4 text-gray-600 dark:text-gray-400">
-                    {{Number:currency($order->grand_total, 'BRL')}}
+                    {{Number::currency($order->grand_total, 'BRL')}}
                   </p>
                 </div>
                 <div class="flex items-center justify-between w-full">
                   <p class="text-base leading-4 text-gray-800 dark:text-gray-400">Discount
                   </p>
                   <p class="text-base leading-4 text-gray-600 dark:text-gray-400">
-                  {{Number:currency(0, 'BRL')}}
+                  {{Number::currency(0, 'BRL')}}
                   </p>
                 </div>
                 <div class="flex items-center justify-between w-full">
                   <p class="text-base leading-4 text-gray-800 dark:text-gray-400">Shipping</p>
                   <p class="text-base leading-4 text-gray-600 dark:text-gray-400">
-                  {{Number:currency(0, 'BRL')}}
+                  {{Number::currency(0, 'BRL')}}
                   </p>
                 </div>
               </div>
               <div class="flex items-center justify-between w-full">
                 <p class="text-base font-semibold leading-4 text-gray-800 dark:text-gray-400">Total</p>
                 <p class="text-base font-semibold leading-4 text-gray-600 dark:text-gray-400">
-                {{Number:currency(0, 'BRL')}}
+                {{Number::currency(0, 'BRL')}}
                 </p>
               </div>
             </div>
@@ -103,7 +103,7 @@
                   </div>
                 </div>
                 <p class="text-lg font-semibold leading-6 text-gray-800 dark:text-gray-400">
-                {{Number:currency(0, 'BRL')}}
+                {{Number::currency(0, 'BRL')}}
                 </p>
               </div>
             </div>

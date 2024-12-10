@@ -29,20 +29,20 @@ class BrandResource extends Resource
 
     protected static ?int $navigationSort = 2;
 
-    public static function mutateFormDataBeforeCreate(array $data): array
-    {
-        $data['slug'] = $data['slug'] ?? Str::slug($data['name']);
-        return $data;
-    }
+    // public static function mutateFormDataBeforeCreate(array $data): array
+    // {
+    //     $data['slug'] = $data['slug'] ?? Str::slug($data['name']);
+    //     return $data;
+    // }
 
-    public static function mutateFormDataBeforeSave(array $data): array
-    {
-        if (!empty($data['name'])) {
-            $data['slug'] = Str::slug($data['name']);
-        }
+    // public static function mutateFormDataBeforeSave(array $data): array
+    // {
+    //     if (!empty($data['name'])) {
+    //         $data['slug'] = Str::slug($data['name']);
+    //     }
 
-        return $data;
-    }
+    //     return $data;
+    // }
 
     public static function form(Form $form): Form
     {
@@ -54,7 +54,7 @@ class BrandResource extends Resource
                             ->required()
                             ->live(onBlur: true)
                             ->afterStateUpdated(
-                                fn(string $operation, $state, Set $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null
+                                fn($state, Set $set) => $set('slug', Str::slug($state))
                             )
                             ->maxLength(255),
 
@@ -62,6 +62,7 @@ class BrandResource extends Resource
                             ->required()
                             ->maxLength(255)
                             ->disabled(true)
+                            //ignoreRecord ignora a verificação de slug único quando for editar o registro
                             ->unique(Brand::class, 'slug', ignoreRecord: true),
                     ]),
 
